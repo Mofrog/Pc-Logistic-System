@@ -1,0 +1,71 @@
+﻿<Window x:Class="LogisticSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogisticSystem"
+        mc:Ignorable="d"
+        Title="Пласт Прайм" Height="450" Width="800" ResizeMode="CanMinimize" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Background="LightGray">
+            <Button x:Name="BtnOrders" Content="Заказы" Click="BtnOrders_Click" />
+            <Button x:Name="BtnUsers" Content="Пользователи" Click="BtnUsers_Click" />
+            <Button x:Name="BtnAddOrder" Content="Добавить заказ" Click="BtnAddOrder_Click" />
+            <Button x:Name="BtnCreateRoute" Content="Составить лист" Click="BtnCreateRoute_Click" />
+            <TextBlock x:Name="TxtAuth" Text="Вы вошли как: Гость" />
+            <Button x:Name="BtnAuth" Content="Войти" Click="BtnAuth_Click" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" x:Name="OrdersPanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Код" Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="1" Text="Статус" Background="#FFFFE7E7" />
+            <TextBlock Grid.Column="2" Text="Адрес" Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="3" Text="Водитель" Background="#FFFFE7E7" />
+            <TextBlock Grid.Column="4" Text="Заказчик"  Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="5" Text="Дата заказа" Background="#FFFFE7E7" />
+            <TextBlock Grid.Column="6" Text="Дата принятия"  Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="7" Text="Дата завершения" Background="#FFFFE7E7" />
+            
+        </Grid>
+        
+        <Grid Grid.Row="1" x:Name="UsersPanel" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Код" Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="1" Text="Роль" Background="#FFFFE7E7" />
+            <TextBlock Grid.Column="2" Text="Имя" Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="3" Text="Фамилия" Background="#FFFFE7E7" />
+            <TextBlock Grid.Column="4" Text="Отчество" Background="#FFFFCFCF" />
+            <TextBlock Grid.Column="5" Text="Транспорт" Background="#FFFFE7E7" />
+        </Grid>
+
+        <Grid Grid.Row="2" Background="Black" />
+
+        <StackPanel Grid.Row="3" x:Name="DataList" Grid.RowSpan="2" />
+    </Grid>
+</Window>
